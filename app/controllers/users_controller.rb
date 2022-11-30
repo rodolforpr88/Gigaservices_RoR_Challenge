@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_query, only: %i[search]
 
   def index
-    @users ||= User.order(:first_name)
+    @pagy, @users = pagy(User.order(:first_name))
   end
 
   def show; end
@@ -76,7 +76,7 @@ class UsersController < ApplicationController
   end
 
   def set_query
-    @users =
-      User.where("first_name ILIKE ? OR last_name ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    @pagy, @users =
+      pagy(User.where("first_name ILIKE ? OR last_name ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%"))
   end
 end
