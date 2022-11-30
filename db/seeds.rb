@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "creating users..."
+FactoryBot.create_list(:user, 15, :with_avatar)
+puts "#{User.count} users created successfully!"
