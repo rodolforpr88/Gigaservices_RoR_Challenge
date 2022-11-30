@@ -1,0 +1,4 @@
+align_case_when true
+quote_style :double
+align_chained_calls true
+trailing_commas false

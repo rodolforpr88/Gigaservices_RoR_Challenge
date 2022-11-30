@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "home#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users
+
+  get "/create_users", to: "users#create_users"
+  get "/search", to: "users#search"
 end

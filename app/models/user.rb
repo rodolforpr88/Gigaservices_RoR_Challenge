@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   enum gender: [:male, :female, :other]
-  enum title: [:Mr, :Ms, :Miss, :Monsieur]
+  enum title: [:Mr, :Mrs, :Ms, :Miss, :Monsieur]
 
   def full_name
     "#{title} #{first_name} #{last_name}".titleize

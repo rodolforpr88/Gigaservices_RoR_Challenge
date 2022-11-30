@@ -1,5 +1,8 @@
 <h1>Users</h1>
 
+
+<%= @users.count %> User(s) found.
+
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
@@ -8,3 +11,5 @@
     </p>
   <% end %>
 </div>
+
+<%= link_to "back", root_path %>
