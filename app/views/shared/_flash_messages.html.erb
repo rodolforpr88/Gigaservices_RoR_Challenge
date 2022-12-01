@@ -1,2 +1,11 @@
-<p style="color: green"><%= notice if notice %></p>
-<p style="color: red"><%= alert if alert %></p>
+<% if notice %>
+  <div class="alert alert-success mt-5 mb-5">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="alert alert-danger mt-5 mb-5">
+    <%= alert %>
+  </div>
+<% end %>

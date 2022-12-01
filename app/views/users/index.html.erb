@@ -1,19 +1,9 @@
-<h1>Users</h1>
-
-
-<%= @users.count %> User(s) found.
-
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
-    <p>
-      <%= link_to "show", user, class: "button is-link is-small" %>
-      <%= link_to "edit", edit_user_path(user), class: "button is-primary is-small" %>
-      <%= link_to "destroy", user, data: { turbo_method: :delete, turbo_confirm: "are you sure?" }, class: "button is-danger is-small" %>
-    </p>
   <% end %>
 </div>
 
-<%== pagy_nav(@pagy) %>
-
-<%= link_to "back", root_path %>
+<div class="d-flex justify-content-center mt-5">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

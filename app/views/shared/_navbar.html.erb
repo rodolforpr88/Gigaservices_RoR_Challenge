@@ -1,0 +1,6 @@
+<nav class="navbar bg-light border-top border-bottom">
+  <div class="container">
+    <%= link_to "Home", root_path, class: "navbar-brand bi bi-house-door" %>
+    <%= render "users/search", users: @users %>
+  </div>
+</nav>

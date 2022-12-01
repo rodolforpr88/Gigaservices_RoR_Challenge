@@ -1,32 +1,43 @@
 <%= form_with(model: user) do |form| %>
   <%= render "shared/error_messages", resource: user %>
 
-  <div>
-    <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
+  <div class="row m-2">
+    <div class="col">
+      <%= form.select :gender, User.genders.keys.to_a, {}, class: "form-select" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row m-2">
+    <div class="col">
+      <%= form.select :title, User.titles.keys.to_a, {}, class: "form-select" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :first, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="row m-2">
+    <div class="col">
+      <%= form.text_field :first_name, class: "form-control", placeholder: "first name" %>
+    </div>
+    <div class="col">
+      <%= form.text_field :last_name, class: "form-control", placeholder: "last name" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :last, style: "display: block" %>
-    <%= form.text_field :last_name %>
+  <div class="row m-2">
+    <div class="col">
+      <%= form.text_field :email, class: "form-control", placeholder: "name@example.com"%>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="row">
+    <div class="col mt-5 text-center">
+      <%= form.file_field :avatar %>
+      <%= image_tag user.avatar, class: "img-fluid rounded ml-5", alt: user.avatar.filename %>
+    </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="row">
+    <div class="col mt-5 text-center">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

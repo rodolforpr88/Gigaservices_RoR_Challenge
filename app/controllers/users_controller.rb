@@ -8,10 +8,6 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def new
-    @user = User.new
-  end
-
   def create
     @user = User.new(user_params)
 
@@ -63,7 +59,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def search; end
+  def search
+    if @pagy.present? && @users.present?
+      flash[:alert] = nil
+      flash[:notice] = "#{@pagy.count} User(s) found"
+    else
+      flash[:notice] = nil
+      respond_to do |format|
+        format.html { redirect_to root_path, alert: "Nothing found for '#{params[:query]}'." }
+      end
+    end
+  end
 
   private
 

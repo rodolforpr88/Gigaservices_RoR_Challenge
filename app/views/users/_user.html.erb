@@ -1,31 +1,24 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>Gender:</strong>
-    <%= user.gender %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= user.title %>
-  </p>
-
-  <p>
-    <strong>First Name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last Name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Avatar:</strong>
-    <%= image_tag user.avatar %>
-  </p>
+<div class="d-flex flex-column">
+  <div id="<%= dom_id user %>" class="text-center">
+    <div class="card mb-3 w-250">
+      <div class="row g-0">
+        <div class="col-md-4 align-self-center">
+          <%= image_tag user.avatar, class: "img-fluid rounded ml-5", alt: user.avatar.filename %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <h5 class="card-title"><%= user.full_name %></h5>
+            <p class="card-text"><%= user.email %></p>
+            <p class="card-text"><%= user.gender %></p>
+            <small><%= link_to "show", user, class: "button is-link is-small text-muted card-text" %></small>
+            <small><%= link_to "edit", edit_user_path(user), class: "button is-primary is-small text-muted" %></small>
+            <small><%= link_to "destroy", user, data: { turbo_method: :delete, turbo_confirm: "are you sure?" }, class: "button is-danger is-small text-muted" %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

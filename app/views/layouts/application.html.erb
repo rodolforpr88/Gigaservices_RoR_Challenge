@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KoudRuby</title>
+    <title>GigaservicesChallenge</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +11,18 @@
   </head>
 
   <body>
-    <%= render "shared/flash_messages" %>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+
+    <div  class="container">
+      <%= render "shared/flash_messages" %>
+
+      <div class="d-flex justify-content-center mt-5 mb-5">
+        <%= link_to "Show all users", users_path, class: "btn btn-primary" %>
+      </div>
+
+      <%= yield %>
+    </div>
+
+    <%= render "shared/footer" %>
   </body>
 </html>
