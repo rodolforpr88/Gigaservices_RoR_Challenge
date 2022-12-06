@@ -65,11 +65,8 @@
 - pagy
 - pry-byebug
 
-# TODOS
+# Feedback from company?
 
-- Things to improve but not required for the challenge
-
-  1 - Add i18n for pt-BR
-  2 - Use Docker Compose for the postgres and RoR
+- :thumbsdown:
 
 Feel free to contact me and give me a feedback.
